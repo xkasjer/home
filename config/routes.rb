@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'main/index'
    root 'main#index'
 
+  get '/room/:id', to: 'main#room', as: 'main_room' 
+  get '/category/:id', to: 'main#category', as: 'main_category' 
+ 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

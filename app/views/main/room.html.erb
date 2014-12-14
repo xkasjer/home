@@ -1,0 +1,15 @@
+<h2><%= @room.name %></h2>
+<% @room.categories.each do |cat|  %>
+  <p><h4><%= cat.name %>
+    </p>
+  </h4>
+  <% cat.room_categories.where(room_id: @room.id).each do |room_cat| %>
+    <% room_cat.devices.each do |device| %>
+      <%= device.name %>
+      <p>
+         <%= check_box_tag "switch_#{device.id}", device.on, device.on %>
+      </p>
+    <% end %>
+    <hr>
+  <% end %>
+<% end %>
